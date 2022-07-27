@@ -1,6 +1,9 @@
 pipeline {
-	agent { 
-		docker { image 'node:14-alpine' } 
+	agent  { 
+		docker { 
+			image 'node:14-alpine' 
+			args '-u root --privileged'
+			} 
 	}
 	stages {
 		stage('build app') {
